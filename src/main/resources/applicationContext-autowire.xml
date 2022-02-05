@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation=
+               "http://www.springframework.org/schema/beans
+                http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean name="dbrepo" class="cf.mindaugas._04_autowirring_xml.repository.DatabaseCustomerRepository" />
+    <!--<bean name="memrepo" class="cf.mindaugas._04_autowirring_xml.repository.InMemoryCustomerRepository" />-->
+    <bean name="customerService" class="cf.mindaugas._04_autowirring_xml.service.CustomerService" autowire="constructor"/>
+</beans>

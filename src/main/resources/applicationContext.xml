@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean name="dbrepo" class="cf.mindaugas._03_spring_di_xml.repository.DatabaseCustomerRepository" />
+    <bean name="memrepo" class="cf.mindaugas._03_spring_di_xml.repository.InMemoryCustomerRepository" />
+
+    <!-- Setter injection -->
+    <!--<bean name="customerService" class="cf.mindaugas._03_spring_di_xml.service.CustomerService">-->
+    <!--    <property name="customerRepository" ref="memrepo"/>-->
+    <!--</bean>-->
+
+    <!-- Constructor injection -->
+    <bean name="customerService" class="cf.mindaugas._03_spring_di_xml.service.CustomerService">
+        <constructor-arg index="0" ref="dbrepo"/>
+    </bean>
+</beans>
